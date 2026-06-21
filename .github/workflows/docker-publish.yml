@@ -67,6 +67,7 @@ jobs:
             ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }}
             DOMAIN=${{ secrets.DOMAIN }}
             EOF
+            echo ${{ secrets.GHCR_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             cd ${{ env.APP_DIR }}
             docker-compose pull
             docker-compose up -d --remove-orphans
