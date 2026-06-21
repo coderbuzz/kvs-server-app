@@ -1,0 +1,23 @@
+{
+  "lockfileVersion": 1,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "kvs-server-app",
+      "dependencies": {
+        "@coderbuzz/kvs": "^0.2.25",
+        "@coderbuzz/kvs-server": "^0.1.24",
+        "@coderbuzz/velox": "^0.3.23",
+      },
+    },
+  },
+  "packages": {
+    "@coderbuzz/kvs": ["@coderbuzz/kvs@0.2.25", "", {}, "sha512-TEdM9J//vrhJGgAqQbN18AvXUSNUor70undcy70JX1p2T46KO4vC04HkNvJ6Nwo44Zip6coorHYu4xQq/eo9ZQ=="],
+
+    "@coderbuzz/kvs-server": ["@coderbuzz/kvs-server@0.1.24", "", { "dependencies": { "@coderbuzz/veta": "^0.2.22" }, "peerDependencies": { "@coderbuzz/kvs": "^0.2.25", "@coderbuzz/velox": "^0.3.23" } }, "sha512-ySA0yC1tXINr4+H+0hE9Vq12L+SQtcaXfNwK86IIT/jPEcEHnwqeQRknlSMB7cTpxrFfOauLcPqcC9wY94l0qA=="],
+
+    "@coderbuzz/velox": ["@coderbuzz/velox@0.3.23", "", {}, "sha512-zTcRKtyfY2HYrd0VT9UEPbjAtaybueUVRJiZrDyrcO771b0zI/a770oIPMbGKdsiopuZT9bFlsu8yW2mt14MEg=="],
+
+    "@coderbuzz/veta": ["@coderbuzz/veta@0.2.22", "", {}, "sha512-7fwiyXtin5NPPNEky59rrGD6CF0W7nN2V6KcVggtDuv7tTyPT/soZucci0LQYBuWL1G1KXDS6PgKcGjXtaxoJQ=="],
+  }
+}

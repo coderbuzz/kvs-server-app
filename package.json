@@ -1,0 +1,15 @@
+{
+  "name": "kvs-server-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts"
+  },
+  "dependencies": {
+    "@coderbuzz/kvs": "^0.2.25",
+    "@coderbuzz/kvs-server": "^0.1.24",
+    "@coderbuzz/velox": "^0.3.23"
+  }
+}

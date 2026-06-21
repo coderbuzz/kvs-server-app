@@ -1,0 +1,24 @@
+services:
+  kvs-server:
+    image: ghcr.io/coderbuzz/kvs-server-app:latest
+    restart: always
+    hostname: kvs-server-app
+    networks:
+      - web
+    environment:
+      ACCESS_TOKEN: ${ACCESS_TOKEN:?error}
+      PORT: ${PORT:-3000}
+    volumes:
+      - ./data:/data
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.kvs-server.entrypoints=web,websecure"
+      - "traefik.http.routers.kvs-server.rule=Host(`${DOMAIN:?error}`)"
+      - "traefik.http.routers.kvs-server.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.kvs-server.tls=true"
+      - "traefik.http.services.kvs-server.loadbalancer.server.port=${PORT:-3000}"
+      - "traefik.http.services.kvs-server.loadbalancer.server.scheme=http"
+
+networks:
+  web:
+    external: true
