@@ -62,13 +62,12 @@ jobs:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ env.DEPLOY_USER }}
           key: ${{ secrets.DEPLOY_SSH_KEY }}
-          script_stop: true
           script: |
             cat > ${{ env.APP_DIR }}/.env << 'EOF'
             ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }}
             DOMAIN=${{ secrets.DOMAIN }}
             EOF
             cd ${{ env.APP_DIR }}
-            docker compose pull
-            docker compose up -d --remove-orphans
+            docker-compose pull
+            docker-compose up -d --remove-orphans
             docker image prune -f
