@@ -42,6 +42,15 @@ else
   echo "[OK] Public key added to authorized_keys"
 fi
 
+APP_DIR="/opt/kvs-server-app"
+if [ -d "$APP_DIR" ]; then
+  echo "[SKIP] App directory $APP_DIR already exists"
+else
+  sudo mkdir -p "$APP_DIR"
+  sudo chown "$DEPLOY_USER:$DEPLOY_USER" "$APP_DIR"
+  echo "[OK] Created $APP_DIR and chown to $DEPLOY_USER"
+fi
+
 echo ""
 echo "============================================"
 echo "  Setup complete"
