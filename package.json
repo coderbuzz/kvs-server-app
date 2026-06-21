@@ -4,12 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "bun run --watch src/index.ts",
-    "start": "bun run src/index.ts"
+    "dev": "DB_PATH=db/kv.db ACCESS_TOKEN=IxYjt0L6TfLFSmqlfjIKtt7mVXSBRUGp bun run --watch src/index.ts",
+    "start": "DB_PATH=db/kv.db ACCESS_TOKEN=IxYjt0L6TfLFSmqlfjIKtt7mVXSBRUGp bun run src/index.ts"
   },
   "dependencies": {
     "@coderbuzz/kvs": "^0.2.25",
     "@coderbuzz/kvs-server": "^0.1.24",
     "@coderbuzz/velox": "^0.3.23"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.14"
   }
 }

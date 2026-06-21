@@ -1,3 +1,5 @@
+import { mkdirSync } from "fs";
+import { dirname } from "path";
 import { KVStore } from "@coderbuzz/kvs";
 import { createServer } from "@coderbuzz/kvs-server";
 
@@ -15,6 +17,7 @@ console.log(`Starting KVS server...`);
 console.log(`  Database: ${dbPath}`);
 console.log(`  Listening: ${hostname}:${port}`);
 
+mkdirSync(dirname(dbPath), { recursive: true });
 const store = new KVStore(dbPath);
 const server = createServer(store, { port, hostname, accessToken });
 
