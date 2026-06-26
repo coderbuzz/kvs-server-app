@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@coderbuzz/kvs": "^0.2.25",
-    "@coderbuzz/kvs-server": "^0.1.25",
+    "@coderbuzz/kvs-server": "^0.1.26",
     "@coderbuzz/velox": "^0.3.23"
   },
   "devDependencies": {
